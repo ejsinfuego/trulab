@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import SayHello from './components/SayHello';
+import Footer from './components/Footer';
+import Head from './components/Head';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+      <div className="flex-wrap justify-center p-10">
+      <Head />
+      <header className="text-center">
+        <SayHello />
+
+        <Footer />
       </header>
-    </div>
+      </div>
+    
   );
 }
 
