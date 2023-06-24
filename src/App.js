@@ -8,8 +8,8 @@ function App() {
   return (
 
       <div className="flex-wrap justify-center p-10">
-      <Head />
       <header className="text-center">
+        <Head />
         <SayHello />
 
         <Footer />
