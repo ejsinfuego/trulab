@@ -13,22 +13,29 @@ class sayHello extends Component {
     setName() {
 
         var user = document.getElementById("user").value;
-        var hanapButton = document.getElementById("trulab").setAttribute("class","btn btn-outline btn-accent max-w-xs");
-        this.setState({
-            message: "Hello, " + user + "!",
-        });
+
+        if (user==""){
+            document.getElementById("warning").setAttribute("class", "text-warning");
+        }else{
+            document.getElementById("trulab").setAttribute("class","btn btn-outline btn-accent max-w-xs");
+            this.setState({
+                message: this.state.message + user + "!" + " 🤭",
+            });
+        }
+        
     }
 
     render() {
         return (
             <div id="main" className="sm:items-center">
                 <h1 className="font-bold pt-10">Hanapon Kung Yaon Sain sa PARSU An Saimong Trulab ❤️</h1>
-                 <p className=" pt-2">Name Please? 🤭</p>
+                 <p className=" pt-2" id="name">Name Please? 🤭</p>
                  <h1 className="body pb-2">{this.state.message}</h1>
                  <input placeholder="Name mo po hehe dai man ini recorded" id="user" className="input input-bordered input-sm w-full max-w-xs" type="text"></input>
                  <button id ="kirag" className="btn btn-outline btn-primary btn-sm" onClick={()=> this.setName()}>Submit</button>
                  <br/>
                  <span id="load" className="animation-pulse"></span>
+                 <p id="warning" className="hidden">name, please.</p>
                  <p id="hulaTruLab"></p>
                  <div className="sm:items-center items-center sm:flex flex justify-center sm:justify-center">
                  <img id="picture" src={this.state.picture} className=""></img>
@@ -43,10 +50,10 @@ class sayHello extends Component {
 
     removeInput() {
         
-        var inputs = document.getElementById("user").setAttribute("class", "hidden");
-        var removeButton = document.getElementById("kirag").setAttribute("class", "hidden");
+        document.getElementById("user").setAttribute("class", "hidden");
+        document.getElementById("kirag").setAttribute("class", "hidden");
         var greet = document.createTextNode("An saimong trulab ay nasa....");
-        var hulaTruLab = document.getElementById("hulaTruLab").appendChild(greet);
+        document.getElementById("hulaTruLab").appendChild(greet);
         
     }
 
@@ -54,6 +61,8 @@ class sayHello extends Component {
 
 
         var loading = document.getElementById("load");
+        document.getElementById("name").setAttribute("class", "hidden");
+        document.getElementById("warning").setAttribute("class", "hidden");
         this.removeInput();
         var cbm = "https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/312572238_779005383400392_2770325688430151533_n.jpg?_nc_cat=102&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEZp0ikI1azjZ13YCX0Goh8eMUScyuJKzR4xRJzK4krNA1RQ1TsxAVxQnldDQK3B_56g9wK5Xl2F1eZOfbXRszY&_nc_ohc=Wdm9rXaUNm0AX-k2H9s&_nc_ht=scontent.fmnl13-1.fna&oh=00_AfBWwqev1EwLH7GOrAogIwBI6oti7lvhG7Lsn5PGk_-XXg&oe=649B1ABF";
         var cas = "https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/298050266_627208842346255_430824025578568078_n.jpg?_nc_cat=105&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHclIoSn_ybrB_0IJzFcvKtMjE4b-PlQMUyMThv4-VAxTHHTUUhwtlZL8Mn0DK4tNES9J5cL1Fa2WQKJb2yotAa&_nc_ohc=3KsvaFNcW9oAX-eEeC3&_nc_ht=scontent.fmnl13-1.fna&oh=00_AfC8cWl8TWOiNFLoZKTTPk9JqJwLBKA58Zz6BvfHHZZMcw&oe=649A4AD2";
@@ -70,7 +79,7 @@ class sayHello extends Component {
         setTimeout(()=> {
             element.setAttribute("src", pinakaFinalResult);
             element.setAttribute("class", "py-5 animate-fadeIn sm:w-36 w-36");
-            var hanapButton = document.getElementById("trulab").setAttribute("class","hidden");
+            document.getElementById("trulab").setAttribute("class","hidden"); 
             loading.setAttribute("class", "hidden");
         }, 3.5 * 1000);
         // setTimeout(element.setAttribute("src", pinakaFinalResult), 20000);
