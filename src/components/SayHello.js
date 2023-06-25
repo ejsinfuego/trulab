@@ -18,11 +18,14 @@ class sayHello extends Component {
             document.getElementById("warning").setAttribute("class", "text-warning");
         }else{
             document.getElementById("trulab").setAttribute("class","btn btn-outline btn-accent max-w-xs");
-            this.removeInput();
+           
             this.setState({
+                
                 message: this.state.message + userName + "!" + " 🤭",
 
             });
+
+            this.removeInput();
         }
         
     }
@@ -56,6 +59,8 @@ class sayHello extends Component {
         document.getElementById("kirag").setAttribute("class", "hidden");
         var greet = document.createTextNode("An saimong trulab ay nasa....");
         document.getElementById("hulaTruLab").appendChild(greet);
+        document.getElementById("name").setAttribute("class", "hidden");
+        document.getElementById("warning").setAttribute("class", "hidden");
         
     }
 
@@ -63,9 +68,7 @@ class sayHello extends Component {
 
 
         var loading = document.getElementById("load");
-        document.getElementById("name").setAttribute("class", "hidden");
-        document.getElementById("warning").setAttribute("class", "hidden");
-        this.removeInput();
+    
         var cbm = "https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/312572238_779005383400392_2770325688430151533_n.jpg?_nc_cat=102&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEZp0ikI1azjZ13YCX0Goh8eMUScyuJKzR4xRJzK4krNA1RQ1TsxAVxQnldDQK3B_56g9wK5Xl2F1eZOfbXRszY&_nc_ohc=Wdm9rXaUNm0AX-k2H9s&_nc_ht=scontent.fmnl13-1.fna&oh=00_AfBWwqev1EwLH7GOrAogIwBI6oti7lvhG7Lsn5PGk_-XXg&oe=649B1ABF";
         var cas = "https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/298050266_627208842346255_430824025578568078_n.jpg?_nc_cat=105&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHclIoSn_ybrB_0IJzFcvKtMjE4b-PlQMUyMThv4-VAxTHHTUUhwtlZL8Mn0DK4tNES9J5cL1Fa2WQKJb2yotAa&_nc_ohc=3KsvaFNcW9oAX-eEeC3&_nc_ht=scontent.fmnl13-1.fna&oh=00_AfC8cWl8TWOiNFLoZKTTPk9JqJwLBKA58Zz6BvfHHZZMcw&oe=649A4AD2";
         var coed = "https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/287082297_114592404607758_7203168607198135054_n.jpg?_nc_cat=108&cb=99be929b-59f725be&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFYYOASEhzDjoBfZ7c8WSScQSMdDTV0vlRBIx0NNXS-VA5DJG_2sASWMxYtA7M0-wZ1jIzbsO0HQ0fa1J8zVycZ&_nc_ohc=9vy4IeE_disAX8aLrWX&_nc_ht=scontent.fmnl13-2.fna&oh=00_AfB743hlyByly3QK8dpwgwuTcApjhjToEC2_SUu0dcpnHA&oe=649B5FCB";
