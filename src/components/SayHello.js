@@ -6,20 +6,22 @@ class sayHello extends Component {
     constructor(props) {
         super(props)
             this.state = {
-                message: "Hello, "
+                message: "Hello, ",
              }
     }
 
     setName() {
 
-        var user = document.getElementById("user").value;
+        var userName = document.getElementById("user").value;
 
-        if (user==""){
+        if (userName===""){
             document.getElementById("warning").setAttribute("class", "text-warning");
         }else{
             document.getElementById("trulab").setAttribute("class","btn btn-outline btn-accent max-w-xs");
+            this.removeInput();
             this.setState({
-                message: this.state.message + user + "!" + " 🤭",
+                message: this.state.message + userName + "!" + " 🤭",
+
             });
         }
         
